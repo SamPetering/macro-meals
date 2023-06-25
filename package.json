@@ -1,25 +1,41 @@
 {
-  "name": "recipe-builder",
+  "name": "macro-meals",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"yarn next:dev\" \"yarn ps\"",
+    "next:dev": "next dev",
+    "ps": "pscale connect macro-meals main --port 3309",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.15",
+    "@heroicons/react": "^2.0.18",
+    "@hookform/resolvers": "^3.1.0",
+    "@prisma/client": "^4.15.0",
     "@types/node": "20.1.7",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
+    "class-variance-authority": "^0.6.0",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
     "next": "13.4.2",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.9",
     "tailwindcss": "3.3.2",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "concurrently": "^8.2.0",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "prisma": "^4.15.0"
   }
 }
